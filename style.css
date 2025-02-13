@@ -1,0 +1,359 @@
+body {
+    display:flex;align-items: center;
+    margin-top: 100px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffe6e6;
+    overflow: hidden;
+  }
+  
+  .opening-screen {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .opening-screen h1 {
+    font-size: 2.5em;
+    z-index: auto;
+    position: relative;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+  }
+  
+  .opening-screen input {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    outline: none;
+    width: 80%;
+    max-width: 300px;
+    z-index: auto;
+    position: relative;
+  }
+  
+  .opening-screen button {
+    z-index: auto;
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .opening-screen button:hover {
+    background-color: #e60000;
+    transform: scale(1.1);
+  }
+  
+  .love-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    overflow: hidden;
+  }
+  
+  .love-effect span {
+    position: fixed;
+    display: block;
+    font-size: 2em;
+    animation: animate 5s linear infinite;
+    bottom: -100px;
+  }
+  
+  @keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+    }
+  }
+  
+  .container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .animated-text {
+    font-size: 2.5em;
+    color: #ff4d4d;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+  
+  /* heart beat */
+  svg {
+    overflow: visible;
+  }
+  svg path#line {
+    fill: none;
+    stroke: #e00000;
+    stroke-width: 2;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4;
+    stroke-dasharray:none;
+    stroke-opacity: 1;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 4s linear infinite;
+  }
+  svg path#heart {
+    transform-origin: 50% 50%;
+    animation: blink 4s linear infinite;
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 1;
+    }
+    80% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    60% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    70% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    85% {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.0);
+    }
+  }
+
+  /* heart beat close */
+
+  /* next button */
+  .next-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #2ecc71;
+    border-radius: 25px;
+    background-color: #2ecc71;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect for the Next button */
+  .next-button:hover {
+    background-color: white;
+    color: #2ecc71;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+  }
+  
+  /* Active state effect */
+  .next-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* close next button */
+
+
+
+
+h4 {
+    justify-content: center;
+    display:flex;align-items: left;
+}
+
+
+.Card {
+ position: relative;
+ width: 450px;
+ height: 550px;
+ cursor: pointer;
+ transform-style: preserve-3d;
+ transform: perspective(2500px);
+ transition: 1s;
+}
+
+.cardFront {
+ position: relative;
+ background-color: #fff;
+ width: 450px;
+ height: 550px;
+ overflow: hidden;
+ transform-origin: left;
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 30px 0 50px rgba(0, 0, 0, 0.4);
+ transition: .6s;
+}
+
+
+.happy {
+ font-family: Tahoma, sans-serif;
+ text-align: center;
+ margin: 10px;
+ background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+ transition: .1s;
+}
+
+
+
+.cardInside {
+ position: absolute;
+ background-color: white;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: 100% 100%;
+ width: 450px;
+ height: 550px;
+ z-index: -1;
+ left: 0;
+ top: 0;
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+.right-aligned-text {
+  text-align: right;
+  font-size: 15px;
+  font-family: cursive ;
+  color: #333;
+  font-weight: bold;
+}
+
+.content {
+  font-size: 15px;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.typing {
+  border-right: 4px solid black;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from{
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.name {
+ position: absolute;
+ left: 150px;
+ /* top: 200px; */
+ color: #333;
+ text-decoration: underline;
+}
+
+.back {
+ font-family: Tahoma, sans-serif;
+ color: #333;
+ text-align: center;
+ margin: 30px;
+ outline-color: #333;
+ outline-style: dashed;
+}
+
+.Card:hover {
+ transform: perspective(2500px) rotate(5deg);
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.Card:hover .cardFront {
+ transform: rotateY(-160deg);
+}
+
+.Card:hover .happy {
+ visibility: hidden;
+}
+
+@keyframes blink {
+ 0% {
+  color: white;
+ }
+
+ 20% {
+  color: yellow;
+ }
+
+ 40% {
+  color: greenyellow;
+ }
+
+ 60% {
+  color: red;
+ }
+
+ 80% {
+  color: hotpink;
+ }
+
+ 100% {
+  color: blue;
+ }
+}
+footer{
+ font-size: 15px;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: bold;
+ color: white;
+ position: absolute;
+ bottom: 0px;
+}
+footer a{
+ color: black;
+}
